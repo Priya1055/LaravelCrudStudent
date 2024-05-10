@@ -11,7 +11,7 @@ class StudentController extends Controller
     {
         // dd('pok');
         $StudInfos = StudInfo::all();
-        $StudInfos = StudInfo::paginate(10); // 10 items per page, adjust as needed
+        $StudInfos = StudInfo::paginate(4); // 10 items per page, adjust as needed
 
         return view('welcome', compact('StudInfos'));
     }
@@ -40,7 +40,7 @@ class StudentController extends Controller
     $StudInfo->save();
     // dd('saved');
     // $StudInfos = StudInfo::all();
-    $StudInfos = StudInfo::paginate(10); // 10 items per page, adjust as needed
+    $StudInfos = StudInfo::paginate(4); // 10 items per page, adjust as needed
 
     return view('welcome',compact('StudInfos'));
     }
@@ -66,7 +66,7 @@ class StudentController extends Controller
                     ]);
 
         // $StudInfos = StudInfo::all();
-        $StudInfos = StudInfo::paginate(10); // 10 items per page, adjust as needed
+        $StudInfos = StudInfo::paginate(4); // 10 items per page, adjust as needed
         return view('welcome', compact('StudInfos'))->with('success', 'Student record updated successfully.');
  }
 
@@ -74,7 +74,7 @@ class StudentController extends Controller
     {
         $student = StudInfo::findOrFail($id);
         $student->delete();
-        $StudInfos = StudInfo::paginate(10);
+        $StudInfos = StudInfo::paginate(4);
         return view('welcome', compact('StudInfos'))->with('success', 'Student record deleted successfully.');
     }
 
@@ -82,7 +82,7 @@ class StudentController extends Controller
 public function funsearch(Request $request) {
     // dd($request);
     $searchQuery = $request->input('searchQuery');
-    $filteredData = StudInfo::where('name', 'like', '%' . $searchQuery . '%')->paginate(10);
+    $filteredData = StudInfo::where('name', 'like', '%' . $searchQuery . '%')->paginate(4);
 
     return view('welcome', ['StudInfos' => $filteredData]);
 }
@@ -91,7 +91,7 @@ public function funsearch(Request $request) {
 public function funsort(Request $request) {
     //dd($request);
     $sortBy = $request->input('sortBy');
-    $sortedData = StudInfo::orderBy($sortBy)->paginate(10);
+    $sortedData = StudInfo::orderBy($sortBy)->paginate(4);
 
     return view('welcome', ['StudInfos' => $sortedData]);
 }
