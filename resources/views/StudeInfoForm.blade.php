@@ -17,8 +17,8 @@
 <body>
     <div class="container">
     <div class="card">
-        <h5 class="card-title">Student Information Form</h5>
-        <div class="card-body">
+        <h2 class="card-title" style="background-color: rgb(46, 89, 103); text-align:center; color :#fcfbf3; font-weight:bold;" >Student Information Form</h2>
+        <div class="card-body"  style="background-color: lightblue;">
         <form action="{{ route('submitStudInfo') }}" method="POST">
             @csrf
             <div class="row">
