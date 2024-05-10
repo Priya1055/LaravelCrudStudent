@@ -18,15 +18,16 @@ Route::get('/StudeInfoForm', function () {
     return view('StudeInfoForm');
 })->name('StudeInfoForm');
 
-
-// Route::post('/submitStudInfo', 'StudentController@funSubmitStudInfo')->name('submitStudInfo');
+//// Route for Create Student Info form Submit
 Route::post('/submitStudInfo', 'App\Http\Controllers\StudentController@funSubmitStudInfo')->name('submitStudInfo');
 
-// Route::get('', 'App\Http\Controllers\StudentController@edit')->name('edit');
+// Route for Edit View
 Route::get('/edit/{id}', 'App\Http\Controllers\StudentController@edit')->name('edit');
+
+// Route for Update operation
 Route::put('/{id}', 'App\Http\Controllers\StudentController@update')->name('update');
 
-
+// Route for delete operation
 Route::post('/delete/{id}', 'App\Http\Controllers\StudentController@destroy')->name('delete');
 
 // Route for search operation
