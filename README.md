@@ -30,3 +30,12 @@ confi/database.php
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
+
+
+
+        #Create migration  create_stude_info 
+        #Create Model StudInfos
+
+
+        
