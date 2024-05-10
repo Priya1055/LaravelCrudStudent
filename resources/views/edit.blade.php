@@ -17,8 +17,8 @@
 <body>
     <div class="container">
         <div class="card">
-            <h5 class="card-title card-header text-center">Student Information Form</h5>
-            <div class="card-body">
+            <h5 class="card-title card-header text-center" style="background-color: rgb(46, 89, 103); text-align:center; color :#fcfbf3; font-weight:bold;">Student Information Form</h5>
+            <div class="card-body" style="background-color: lightblue;">
                 <form action="{{ route('update', $student->id) }}" method="POST">
                     @csrf
                     @method('PUT')
