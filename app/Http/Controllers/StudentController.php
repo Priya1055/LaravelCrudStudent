@@ -39,6 +39,7 @@ class StudentController extends Controller
     // Save the model to the database
     $StudInfo->save();
     // dd('saved');
+    
     // $StudInfos = StudInfo::all();
     $StudInfos = StudInfo::paginate(4); // 10 items per page, adjust as needed
 
